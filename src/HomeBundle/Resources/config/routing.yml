@@ -1,0 +1,12 @@
+home_homepage:
+    path:     /
+    defaults: { _controller: HomeBundle:Default:index }
+
+home_accueil:
+    path:     /accueil
+    defaults: { _controller: HomeBundle:Default:accueil }
+
+home_actualites:
+    path:     /actualites
+    defaults: { _controller: HomeBundle:Default:actualites }
+

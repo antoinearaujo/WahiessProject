@@ -1,0 +1,91 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<link rel="stylesheet" href="{{ asset('template/stylesheets/foundation.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/main.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/app.css')}}">
+
+  <script src="template/javascripts/modernizr.foundation.js"></script>
+  
+  <link rel="stylesheet" href="template/ligature.css">
+  
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+
+  <!-- ######################## Main Menu ######################## -->
+ 
+<nav>
+ 
+     <div class="twelve columns header_nav">
+     <div class="row">
+      
+        <ul id="menu-header" class="nav-bar horizontal">
+        
+         <li class="active"><a href="{{ path('home_homepage') }}">Accueil</a></li>
+      
+          
+          {% if is_granted('ROLE_USER') %}
+          <li class="has-flyout">
+           <a href="#">Mon profil</a><a href="#" class="flyout-toggle"></a>
+            <ul class="flyout"><!-- Flyout Menu -->
+              <li class="has-flyout"><a href="{{ path('fos_user_profile_show') }}">Voir mon profil</a></li>
+              <li class="has-flyout"><a href="{{ path('fos_user_profile_edit') }}">Editer mon profil</a></li>
+              <li class="has-flyout"><a href="{{ path('fos_message_inbox') }}">Mes messages</a></li>
+            </ul> 
+          </li><!-- END Flyout Menu -->
+          
+          {% else %}
+          <li class=""><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
+          <li class=""><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+          {% endif %}
+
+          <li class=""><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+      
+        </ul>
+        
+        <script type="text/javascript">
+         //<![CDATA[
+         $('ul#menu-header').nav-bar();
+          //]]>
+        </script>
+        
+      </div>  
+      </div>      
+</nav>
+
+
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+
+
+<!-- ######################## Section ######################## -->
+
+   <section  class="section_dark">
+   
+      <div class="row"> 
+      
+      <h2>Copyright Beloud Corp.</h2>
+      
+
+      
+      </div>
+      
+    </section>
+      
+
+
+</footer>		  
+
+<!-- ######################## Scripts ######################## --> 
+
+    <!-- Included JS Files (Compressed) -->
+    <script src="{{ asset('template/javascripts/foundation.min.js') }}" type="text/javascript"></script> 
+    <!-- Initialize JS Plugins -->
+     <script src="{{ asset('template/javascripts/app.js') }}" type="text/javascript"></script>
+</body>
+</html>

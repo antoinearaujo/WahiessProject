@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+
+
+
+
+
+
+
+
+{% block body%}
+
+
+
+
+
+
+
+</br>
+</br>
+</br>
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+
+{{ form_start(form)}}
+{{ form_label(form.Name) }} {{ form_widget(form.Name) }}
+{{ form_rest(form)}}
+ 
+
+{% endif %}
+
+{% if not is_granted ('ROLE_SUPER_ADMIN')%}
+
+<h1>Vous n'êtes pas administrateur</h1>
+
+{%endif%}
+
+</br>
+
+
+{% endblock %}

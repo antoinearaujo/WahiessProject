@@ -1,0 +1,90 @@
+
+{% if is_granted('ROLE_USER') %}
+  <meta http-equiv="refresh" content="0; {{ path('home_actualites') }}">
+{% endif %}
+<link rel="stylesheet" href="{{ asset('template/stylesheets/foundation.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/main.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/app.css')}}">
+
+  <script src="template/javascripts/modernizr.foundation.js"></script>
+  
+  <link rel="stylesheet" href="template/ligature.css">
+  
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+
+
+<body>
+
+
+
+  
+
+      
+<!-- ######################## Header ######################## -->
+        
+        <header>
+              <h1 class="heading_supersize">WAHIESS</h1>
+              <h2 class="welcome_text">Juste pour les p'tit marlots!</h2>    
+        </header>
+        
+<!-- ######################## Section ######################## -->
+     
+   <section class="section_light">
+   
+        <div class="row">
+        
+         <div class="four columns">
+            <h3> Partagez vos photos</h3>
+            <p>Faites profiter aux marlots de vos plus beau clichés en mode ASWELL! </p>
+         </div>
+
+         <div class="four columns">
+            <h3>Faites pas trop les bills</h3>
+            <p>Si vous faites pas trop les bills y'a moyen d'être bolzy ! </p>
+         </div>
+         
+      
+          <div class="four columns">
+            
+              <ul id="menu-header" class="nav-bar horizontal">
+                <li class=""><a href="{{ path('fos_user_security_login') }}" style="text-align: center;">
+                <h2 style="background-color: #F06B48;">Connexion</h2></a></li></br>
+                <li class=""><a href="{{ path('fos_user_registration_register') }}" style="text-align: center;">
+                <h2 style="background-color: #F06B48;">Inscription</h2></a></li>
+            </ul>
+          </div>
+          
+          
+
+        
+        </div>
+        
+    </section>
+
+<!-- ######################## Section ######################## -->
+
+   <section  class="section_dark">
+   
+      <div class="row"> 
+      
+      <h2>Copyright Beloud Corp.</h2>
+      
+
+      
+      </div>
+      
+    </section>
+      
+
+
+</footer>     
+
+<!-- ######################## Scripts ######################## --> 
+
+    <!-- Included JS Files (Compressed) -->
+    <script src="template/javascripts/foundation.min.js" type="text/javascript"></script> 
+    <!-- Initialize JS Plugins -->
+     <script src="template/javascripts/app.js" type="text/javascript"></script>
+</body>
+</html>

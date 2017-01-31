@@ -1,0 +1,11 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+user_article:
+    path:     /article
+    defaults: { _controller: UserBundle:Default:ajout }
+user_delete_article:
+    pattern:  /article/{id}
+    defaults: { _controller: UserBundle:Default:deleteArticle }
+
+

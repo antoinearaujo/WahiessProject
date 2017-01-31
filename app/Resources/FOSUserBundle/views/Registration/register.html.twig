@@ -1,0 +1,66 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<link rel="stylesheet" href="{{ asset('template/stylesheets/foundation.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/main.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/stylesheets/app.css')}}">
+
+  <script src="template/javascripts/modernizr.foundation.js"></script>
+  
+  <link rel="stylesheet" href="template/ligature.css">
+  
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+
+          {% if is_granted('ROLE_USER') %}
+       
+<!-- ######################## Header ######################## -->
+        
+        <header>
+              <h1 class="heading_supersize">F-RAP</h1>
+              <h2 class="welcome_text">Partageons le vrai rap !</h2>    
+        </header>
+<h2 style="text-align: center;"> S'inscrire </h2>
+
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+
+
+
+<!-- ######################## Section ######################## -->
+
+   <section  class="section_dark">
+   
+      <div class="row"> 
+      
+      <h2>Copyright Beloud Corp.</h2>
+      
+
+      
+      </div>
+      
+    </section>
+      
+
+
+</footer>   
+{% else %}  
+<h1> Désolé, mais c'est que pour les marlots... </h1>
+{% endif %}
+
+<!-- ######################## Scripts ######################## --> 
+
+    <!-- Included JS Files (Compressed) -->
+    <script src="{{ asset('template/javascripts/foundation.min.js') }}" type="text/javascript"></script> 
+    <!-- Initialize JS Plugins -->
+     <script src="{{ asset('template/javascripts/app.js') }}" type="text/javascript"></script>
+</body>
+</html>
+
+
+
